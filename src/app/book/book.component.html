@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Book Catalogue</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of myBooks">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td><button class="btn btn-primary" Detail></button></td>
+      </tr>
+    </tbody>
+  </table>
+  <form novalidate [formGroup]="myModel" (ngSubmit)="onSubmit(myModel)">
+Title:<input type="text" formControlName="title">
+Author:<input type="text" formControlName="author">
+Price:<input type="text" formControlName="price">
+Publisher:<input type="text" formControlName="publisher">
+<button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<!-- //"start": "node ./bin/www", -->
